@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Artifact Intelligence Platform - Architecture Diagrams</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            50% { box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            animation: slideIn 0.5s ease-out;
+        }
+        h1 {
+            color: #fff;
+            border-bottom: 4px solid #fbbf24;
+            padding-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #1f2937;
+            margin-top: 40px;
+            padding: 15px;
+            background: linear-gradient(90deg, #e0f2fe 0%, #dbeafe 100%);
+            border-left: 5px solid #3b82f6;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            animation: slideIn 0.6s ease-out;
+        }
+        .diagram-container {
+            background: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            overflow-x: auto;
+            animation: glow 3s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+        .diagram-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            min-height: 500px;
+            padding: 20px;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        .description {
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-style: italic;
+            padding: 10px;
+            background: #f9fafb;
+            border-left: 3px solid #10b981;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        .math-note {
+            margin-top: 15px;
+            padding: 12px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            color: #92400e;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧠 Cognitive Artifact Intelligence Platform (CAIP)<br/>Neural Document Orchestration & Semantic Synthesis Architecture</h1>
+
+    <div class="diagram-container">
+        <h2>System Architecture Overview</h2>
+        <div class="description">Complete cognitive system architecture showing neural components, quantum processing layers, and information-theoretic relationships</div>
+        <div class="math-note">Mathematical Framework: Shannon Entropy H(X) = -Σ p(x) log₂ p(x), Bayesian Inference P(A|B), Quantum State Evolution ψ(t) = U(t)ψ(0)</div>
+        <div class="mermaid">
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#ff6b9d','primaryTextColor':'#fff','primaryBorderColor':'#7C0000','lineColor':'#F8B229','secondaryColor':'#006100','tertiaryColor':'#fff'}}}%%
+graph TB
+    subgraph "Artifact Acquisition Layer"
+        CE[Neural Extension Interface<br/>Data Collector]
+        SQ1[(Repository Alpha<br/>Artifact Storage)]
+        SQ2[(Repository Beta<br/>Artifact Storage)]
+        CE -->|Data Acquisition| SQ1
+        CE -->|Data Acquisition| SQ2
+    end
+    
+    subgraph "Cognitive Artifact Intelligence Platform"
+        API[Neural Orchestration API<br/>Port 8001<br/>Graph-Based Routing]
+        ETL[ETL Pipeline<br/>Topological Transformation<br/>Phi: SQLite to PostgreSQL]
+        
+        subgraph "Knowledge Graph Layer"
+            PG[(PostgreSQL<br/>Artifact Repository<br/>Structured Data Store)]
+            CDB[(ChromaDB<br/>Vector Embedding Space<br/>Semantic Search Index)]
+        end
+        
+        subgraph "Cognitive AI Layer"
+            RAG[LangChain RAG Engine<br/>Semantic Matching<br/>Context Retrieval]
+            OLL[Ollama Service<br/>Local AI Processing]
+            OAI[OpenAI Service<br/>Cloud AI Processing]
+        end
+        
+        subgraph "Processing Neural Network"
+            JPS[Artifact Intelligence Processor<br/>Content Analysis<br/>Pattern Recognition]
+            RS[Intelligent Document Synthesis<br/>AI Document Generation]
+            REP[Analytics & Reporting Engine<br/>Statistical Analysis]
+        end
+        
+        ETL -->|Continuous Flow| PG
+        API -->|Graph Neural Network| ETL
+        API -->|Neural Routing| JPS
+        API -->|Cognitive Pipeline| RS
+        API -->|Analytics Pipeline| REP
+        
+        JPS -->|Entropy Reduction| PG
+        JPS -->|Embedding Projection| CDB
+        JPS -->|Semantic Query| RAG
+        RAG -->|Vector Retrieval| CDB
+        RAG -->|AI Processing| OLL
+        RAG -->|Cloud Processing| OAI
+        RS -->|AI Generation| OLL
+        RS -->|Cloud Generation| OAI
+        REP -->|Information Query| PG
+    end
+    
+    subgraph "Synthesis Output Layer"
+        RES[Generated Documents<br/>Synthetically Enhanced Artifacts]
+        CSV[Analytics Reports<br/>Entropy-Time Series Data]
+        EMAIL[Cognitive Delivery System]
+    end
+    
+    RS -->|Document Synthesis| RES
+    REP -->|Statistical Output| CSV
+    REP -->|Neural Notification| EMAIL
+    
+    SQ1 -.->|Data Pipeline| ETL
+    SQ2 -.->|Data Pipeline| ETL
+    USER[Cognitive Trigger<br/>Human-in-the-Loop] -->|Orchestration Request| API
+    
+    style CE fill:#6366f1,color:#fff
+    style SQ1 fill:#8b5cf6,color:#fff
+    style SQ2 fill:#8b5cf6,color:#fff
+    style PG fill:#10b981,color:#fff
+    style CDB fill:#ec4899,color:#fff
+    style API fill:#f59e0b,color:#fff
+    style RAG fill:#3b82f6,color:#fff
+    style USER fill:#14b8a6,color:#fff
+    style JPS fill:#ef4444,color:#fff
+    style RS fill:#06b6d4,color:#fff
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <h2>Data Flow Sequence Diagram</h2>
+        <div class="description">Information-theoretic processing pipeline showing cognitive data flow with quantum entropy analysis and Bayesian inference</div>
+        <div class="math-note">Sequence Framework: Information Theory I(X;Y), Bayesian Inference P(A|B), Cosine Similarity cos(θ) = (A·B)/(||A|| ||B||), Attention Mechanism Attention(Q,K,V)</div>
+        <div class="mermaid">
+sequenceDiagram
+    participant User as Cognitive Operator
+    participant CE as Neural Extension Interface
+    participant SQLite as Repository Layer Alpha/Beta
+    participant ETL as Topological ETL Pipeline
+    participant PG as Knowledge Graph PostgreSQL
+    participant CDB as Embedding Space ChromaDB
+    participant RAG as RAG Cognitive Engine
+    participant DocGen as Document Synthesis Engine
+    participant Analytics as Analytics Engine
+    
+    CE->>SQLite: Artifact Acquisition
+    Note over SQLite: Artifact Storage
+    
+    User->>ETL: POST /api/etl/orchestrate
+    ETL->>SQLite: Read Artifacts
+    SQLite-->>ETL: Artifact Data Stream
+    ETL->>PG: Write to Knowledge Graph
+    PG-->>ETL: Confirmation
+    
+    User->>ETL: GET /api/etl/status
+    ETL-->>User: Status & Count
+    
+    User->>PG: POST /api/processing/trigger
+    PG->>CDB: Create Embeddings
+    CDB->>RAG: Semantic Query
+    RAG->>RAG: Rank & Match
+    RAG-->>PG: Update Match Scores
+    
+    User->>DocGen: POST /api/artifacts/{id}/synthesize
+    DocGen->>RAG: Extract Context
+    DocGen->>DocGen: Generate Content
+    DocGen->>DocGen: Create Document
+    DocGen-->>User: Document Path
+    
+    User->>Analytics: GET /api/analytics/temporal
+    Analytics->>PG: Query Knowledge Graph
+    Analytics->>Analytics: Generate Report
+    Analytics-->>User: Analytics Report
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <h2>Neural Component Architecture</h2>
+        <div class="description">Multi-layer cognitive processing architecture with graph-based topology, Bayesian inference networks, and quantum computation layers</div>
+        <div class="math-note">Architecture Framework: Graph Neural Networks GNN(V,E), Manifold Learning f: ℝⁿ → ℝᵐ, Quantum State Evolution ψ(t) = U(t)ψ(0), Activation Function σ(x)</div>
+        <div class="mermaid">
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#6366f1','primaryTextColor':'#fff','primaryBorderColor':'#4c1d95','lineColor':'#8b5cf6','secondaryColor':'#10b981','tertiaryColor':'#ec4899'}}}%%
+graph LR
+    subgraph "ETL Neural Layer<br/>Information Transformation"
+        ETL[Topological ETL Engine<br/>Repo to Knowledge Graph]
+        ETL --> |Read Operation| SQLite[Repository Interface<br/>Alpha & Beta Sources]
+        ETL --> |Write Operation| PG[Knowledge Graph<br/>PostgreSQL]
+    end
+    
+    subgraph "Orchestration API Layer<br/>Graph Routing"
+        API[Neural Orchestration API<br/>FastAPI + Graph Routing]
+        API --> |API Triggers| ETL
+        API --> |Processing| PROC[Artifact Intelligence Processor<br/>Semantic Analysis]
+        API --> |Document Synthesis| RES[Intelligent Synthesis Engine<br/>AI-Based]
+        API --> |Analytics| REP[Analytics & Reporting<br/>Statistical Analysis]
+    end
+    
+    subgraph "Cognitive AI Layer<br/>AI Processing Network"
+        PROC --> |Vector Embeddings| CDB[ChromaDB<br/>High-Dimensional Space]
+        PROC --> |Semantic Query| RAG[LangChain RAG<br/>Context Retrieval]
+        RAG --> |Vector Search| CDB
+        RAG --> |Local AI Processing| OLL[Ollama Service<br/>Local LLM]
+        RAG --> |Cloud AI Processing| OAI[OpenAI Service<br/>Cloud LLM]
+        RES --> |Local Synthesis| OLL
+        RES --> |Cloud Synthesis| OAI
+    end
+    
+    subgraph "Storage & Persistence Layer<br/>Data Storage"
+        PG --> |Artifact Storage| PG[(PostgreSQL<br/>Knowledge Repository)]
+        CDB --> |Vector Embeddings| CDB[(ChromaDB<br/>Embedding Space)]
+        RES --> |Generated Documents| FS[File System<br/>Artifact Repository]
+    end
+    
+    style API fill:#6366f1,color:#fff
+    style RAG fill:#8b5cf6,color:#fff
+    style CDB fill:#ec4899,color:#fff
+    style PG fill:#10b981,color:#fff
+    style PROC fill:#f59e0b,color:#fff
+    style RES fill:#06b6d4,color:#fff
+    style OLL fill:#14b8a6,color:#fff
+    style OAI fill:#3b82f6,color:#fff
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#6366f1',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#4c1d95',
+                lineColor: '#8b5cf6',
+                secondaryColor: '#10b981',
+                tertiaryColor: '#ec4899',
+                noteBkgColor: '#fff4e6',
+                noteTextColor: '#1f2937',
+                noteBorderColor: '#f59e0b',
+                fontFamily: 'system-ui, -apple-system, sans-serif'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20,
+                nodeSpacing: 50,
+                rankSpacing: 80
+            },
+            sequence: {
+                diagramMarginX: 50,
+                diagramMarginY: 10,
+                actorMargin: 50,
+                width: 150,
+                height: 65,
+                boxMargin: 10,
+                boxTextMargin: 5,
+                noteMargin: 10,
+                messageMargin: 35,
+                mirrorActors: true
+            }
+        });
+    </script>
+</body>
+</html>
